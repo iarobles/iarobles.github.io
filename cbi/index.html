@@ -1,0 +1,567 @@
+<html><head><meta charset="utf-8"><style>/*@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);*/
+
+
+/*** Table Styles **/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #57A519;
+  color:#2f2f2f;
+  font-family: "Open Sans", arial;
+  font-size: 12px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+#header{
+  margin-top:3em;
+  text-align: center;
+}
+
+#program{
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-bottom: 7em;
+  margin-top:3em;
+}
+
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  padding: 10px;
+  margin-left:20px;
+}
+
+.checkboxtext
+{
+  /* Checkbox text */
+  font-size: 110%;
+  display: inline;
+  margin-left: 1em;
+}
+
+.form-row{  
+  text-align: left;  
+}
+
+.cbimeeting-link{    
+  color:white;    
+  font-size: 3em;    
+  text-align: center;  
+  text-shadow: 0 1px 0 #38678f;
+}
+
+
+table {
+  width: 100%;  
+  height: 320px;
+  border-collapse: collapse;
+  border: 1px solid #38678f;  
+  background: #fdfdfd;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  animation: float 5s infinite;
+}
+.cell-time-interval{
+  width:130px;
+  text-align: center;
+}
+th, .cell-time-interval,#table-modifier {
+  height: 54px;    
+}
+th,.cell-time-interval,#table-modifier, .abstract-title {
+  background: #57A519;  
+  font-weight: lighter;
+  text-shadow: 0 1px 0 #38678f;
+  color: white;
+  border: 1px solid #458414;
+  box-shadow: inset 0px 1px 2px #67ae2f;
+  transition: all 0.2s;
+}
+tr {
+  border-bottom: 1px solid #cccccc;
+}
+td {
+  border-right: 1px solid #cccccc;
+  padding: 10px;
+  transition: all 0.2s;
+}
+
+
+.content {
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.cell-title, .cell-name, .cell-affiliation, .cell-abstract{
+  display:block;
+  text-align: center; 
+}
+
+.cell-title{   
+   font-weight: bold;  
+   font-size:1em;
+}
+.abstract-return a, .abstract-return a:visited, .cell-title a, .cell-title a:visited{
+  color:#34630f;
+}
+.cell-plenary{   
+   background-color:#CDCDCD;
+   border:1px solid #E6E6E6;
+}
+.cell-plenary .cell-title{
+   font-size:1em; 
+}
+
+.cell-name{ 
+  margin-top:0.5em;
+}
+.cell-affiliation{
+  margin-top: 0.3em;
+}
+.cell-abstract{
+  margin-top: 1em;
+}
+
+.cell-plenary{
+  padding-top:10px; 
+  padding-bottom:10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.cell-short-talk{
+  padding:1em;
+}
+.cell-coffe-break{
+  padding: 1em;
+}
+.cell-lunch{
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.abstract-box{  
+  background-color: #57A519;
+  font-size:17px;
+  margin-top:1em;
+}
+
+.abstract{    
+  background: #fdfdfd;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
+  color:#2f2f2f;
+  font-weight: normal;
+  margin-top:1em; 
+}
+
+.abstract-title{   
+  padding-left:0.5em;
+  padding-right:0.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;  
+}
+
+.abstract-container{
+  font-size:1em;
+  padding:2em 3em;
+}
+
+.abstract-speaker{
+  font-size: 1.2em;
+  margin-top: 1em;      
+}
+
+.abstract-affiliation{
+  font-size: 1.2em; 
+  margin-top: 1em;
+}
+
+.abstract-speaker span, .abstract-affiliation span{
+  font-weight: bold;
+}
+
+.abstract-content{
+  margin-top: 3em;      
+  line-height: 1.5em;
+}
+
+.abstract-return{
+  text-align: center;
+  margin-top: 2em;
+}
+
+
+.show {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.hide {
+  display:none;
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+
+.hidden{
+  display:none;
+}</style></head><body><div id="header">
+<a class="cbimeeting-link" href="https://sites.google.com/view/cbimeeting/">CBI Student's Meeting</a>
+</div>
+<div id="program" class="show"><table class="table-fill"><thead><tr class="hidden"><th colspan="6"><input id="show-titles-button" type="checkbox" name="showTitles" checked /><span class="checkboxtext">Show titles of talks</span></th></tr><tr><th class="hour-header">Hour</th><th>Monday 24</th><th>Tuesday 25</th><th>Wednesday 26</th><th>Thursday 27</th><th>Friday 28</th></tr></thead>
+<tbody>
+<tr><td class="cell-time-interval">9:20-9:40</td><td class="cell-event cell-inaguration" rowspan="2" ><span class="cell-title">Inaguration</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-0-1">Stability in the General Economic Equilibrium</a></span><span class="cell-name">Natanael Fernando Márquez Juárez</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-0-2">Asymmetrical Sp3 Boron Atoms With Poly(Ethylene Glycol) Bridges As Single Lithium Ion Conducting Polymer Electrolytes</a></span><span class="cell-name">Gregorio Guzmán González</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-0-3">Characterization of auditive, olfactory and sensory pathway functions by anisotropic di_usion using Nuclear Magnetic Resonance Imaging.</a></span><span class="cell-name">Héctor Ramírez Flores</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-0-4">Spatial analysis of fish richness of the Eastern Tropical Pacific</a></span><span class="cell-name">Javier Rosas López</span></td></tr>
+<tr><td class="cell-time-interval">9:40-10:00</td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-1-1">A hydrodynamic and kinetic model to describe the formation of calcium carbonate deposits in pipelines</a></span><span class="cell-name">Héctor Gómez Yáñez</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title">Monitoring Acidithiobacillus thiooxidans biofilm formation on graphite surface  </span><span class="cell-name">Marcela Méndez Tovar</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-1-3">Selective Catalytic Reduction of NOx with NH3 in small pore zeolites for diesel engines.</a></span><span class="cell-name">Gabriela Itzel Hernández Salgado</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-1-4">Structure of the invariant states of the generators of the weak coupling limit type</a></span><span class="cell-name">Álvaro Hernández Cervantes</span></td></tr>
+<tr><td class="cell-time-interval">10:00-11:00</td><td class="cell-event cell-plenary" rowspan="1" ><span class="cell-title"><a href="#event-2-0">Effective medium equations: applications and limitations</a></span><span class="cell-name">J. Alberto Ochoa Tapia</span><span class="cell-affiliation">Deparment of Chemical Engineering</span></td><td class="cell-event cell-plenary" rowspan="1" ><span class="cell-title"><a href="#event-2-1">Internationalism in an Age of Nationalism: Building Mutual Understanding through Student Exchange</a></span><span class="cell-name">Colman Cumberland</span><span class="cell-affiliation">CELEX</span></td><td class="cell-event cell-plenary" rowspan="1" ><span class="cell-title"><a href="#event-2-2">Studying and research in Germany</a></span><span class="cell-name">Alejandro Cadena Ramos</span><span class="cell-affiliation">DAAD</span></td><td class="cell-event cell-plenary" rowspan="1" ><span class="cell-title"><a href="#event-2-3">Traveling wave solutions of PDE</a></span><span class="cell-name">Patricia Saavedra Barrera</span><span class="cell-affiliation">Deparment of Mathematics</span></td><td class="cell-event cell-plenary" rowspan="1" ><span class="cell-title"><a href="#event-2-4">The role of electrochemical energy systems in the renewable energy sector</a></span><span class="cell-name">G. Ramos-Sánchez</span><span class="cell-affiliation">Deparment of Chemistry</span></td></tr>
+<tr><td class="cell-time-interval">11:00-11:20</td><td class="cell-event cell-workshop" rowspan="6" ><span class="cell-title">Python workshop</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-3-1">Wernicke´s area and Broca´s area in functional connectivity of language.</a></span><span class="cell-name">Fernando Villanueva Junes</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-3-2">Correlation filter review</a></span><span class="cell-name">Oliver G. Campos Trujillo</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-3-3">Minimum Number of Matches Problem in Heat Recovery Network Design Using the Metaheuristic Optimization Technique-Tabu Search</a></span><span class="cell-name">Luis Eduardo Pedroza Robles Arenas</span></td><td class="cell-event cell-workshop" rowspan="6" ><span class="cell-title">Python workshop</span></td></tr>
+<tr><td class="cell-time-interval">11:20-11:40</td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-4-1">Comparative study of the quantum efficiency of 4 elements of the Sumerged Acuatic Vegetation in the coasts of The Gulf of Mexico and Yucatan.</a></span><span class="cell-name">Sergio Armando Fuentes Agueda</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-4-2">The cool kids of Complexity Theory: NP-complete problems</a></span><span class="cell-name">Ismael Ariel Robles Martínez</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-4-3">Exact solution for the confined hydrogen atom as a starting point for the design of basis set functions</a></span><span class="cell-name">Michael Adán Martínez Sánchez</span></td></tr>
+<tr><td class="cell-time-interval">11:40-12:00</td><td class="cell-event cell-coffe-break" rowspan="1" ><span class="cell-title">Coffe Break</span></td><td class="cell-event cell-coffe-break" rowspan="1" ><span class="cell-title">Coffe Break</span></td><td class="cell-event cell-coffe-break" rowspan="1" ><span class="cell-title">Coffe Break</span></td></tr>
+<tr><td class="cell-time-interval">12:00-12:20</td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-6-1">Hydrometallurgy process for the recovery of copper from mining tailings in the state of Zacatecas. </a></span><span class="cell-name">Ángel Ruiz Sánchez</span></td><td class="cell-event cell-plenary" rowspan="3" ><span class="cell-title"><a href="#event-6-2">Publish or perish? Key points to consider when writing and submitting research to a scientific journal</a></span><span class="cell-name">José A. Ayala Mercado</span><span class="cell-affiliation">Mexican Journal of Physics</span></td><td class="cell-event cell-short-talk" rowspan="2" ><span class="cell-title"><a href="#event-6-3">A symmetry behind quantization process</a></span><span class="cell-name">Manuel de la Cruz López</span></td></tr>
+<tr><td class="cell-time-interval">12:20-12:40</td><td class="cell-event cell-workshop" rowspan="6" ><span class="cell-title">LaTeX workshop</span></td></tr>
+<tr><td class="cell-time-interval">12:40-13:00</td><td class="cell-event cell-workshop" rowspan="5" ><span class="cell-title">CELEX workshop</span></td></tr>
+<tr><td class="cell-time-interval">13:00-13:20</td><td class="cell-event cell-coffe-break" rowspan="1" ><span class="cell-title">Coffe Break</span></td><td class="cell-event cell-workshop" rowspan="4" ><span class="cell-title">LaTeX workshop</span></td><td class="cell-event cell-coffe-break" rowspan="1" ><span class="cell-title">Coffe Break</span></td></tr>
+<tr><td class="cell-time-interval">13:20-13:40</td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-10-0">Peripheral dose measurement in hypofractionated treatments of breast cancer patients submitted to tomotherapy using thermoluminiscent dosimeter</a></span><span class="cell-name">Omar Medina Arreguín</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title">To be announced</span><span class="cell-name">Darja Trende</span></td></tr>
+<tr><td class="cell-time-interval">13:40-14:00</td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-11-0">Average velocity profile in a channel partially filled with a porous medium</a></span><span class="cell-name">Roel Hernández Rodríguez</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-11-4">Characterization of hydrodynamics, heat and mass transport under abiotic and biotic condition in a tray bioreactor for the production of proteases out of agroindustrial wastes</a></span><span class="cell-name">Gerardo Atlantis Gómez Ramos</span></td></tr>
+<tr><td class="cell-time-interval">14:00-14:20</td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-12-0">Tunable Diode Lasers</a></span><span class="cell-name">Luis Alberto Nava Rodríguez</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-12-4">Free-energy model for nano-particles self-assembly by liquid crystal sorting</a></span><span class="cell-name">Noé de Jesús Atzin Cañas</span></td></tr>
+<tr><td class="cell-time-interval">14:20-15:00</td><td class="cell-event cell-lunch" rowspan="1" ><span class="cell-title">Lunch</span></td><td class="cell-event cell-lunch" rowspan="1" ><span class="cell-title">Lunch</span></td><td class="cell-event cell-lunch" rowspan="1" ><span class="cell-title">Lunch</span></td><td class="cell-event cell-lunch" rowspan="1" ><span class="cell-title">Lunch</span></td><td class="cell-event cell-lunch" rowspan="1" ><span class="cell-title">Lunch</span></td></tr>
+<tr><td class="cell-time-interval">15:00-15:20</td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-14-0">Some reducibility criteria for Polynomials</a></span><span class="cell-name">Julio Pérez Hernández</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title">Anomalous conical emission with Bessel beams</span><span class="cell-name">Áulide Martínez Tapia</span></td><td class="cell-event cell-poster" rowspan="7" ><span class="cell-title">Poster session</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-14-3">Fluorescence</a></span><span class="cell-name">David Silva Roy</span></td><td class="cell-event cell-plenary" rowspan="3" ><span class="cell-title"><a href="#event-14-4">On the analysis of abdominal signals for fetal heart rate monitoring: a methodology based on Independent Component Analysis</a></span><span class="cell-name">Aída Jiménez-González</span><span class="cell-affiliation">Department Electrical Engineering</span></td></tr>
+<tr><td class="cell-time-interval">15:20-15:40</td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-15-0"> Ureolytic Biofilm Formation from a Microbial Consortium on Graphite</a></span><span class="cell-name">María Concepción Romero Serrano</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-15-1">Kinetic Assessment of the Oxative Dehydrogenation of Ethane Using a NiSnO catalysts</a></span><span class="cell-name">Carlos Alvarado Camacho</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-15-3">Spatial Distribution Patterns of Submerged Aquatic Vegetation in The Biosphere “Los Petenes” in Campeche, Mexico detected by Remote Sensing</a></span><span class="cell-name">Iliana Pérez Espinosa</span></td></tr>
+<tr><td class="cell-time-interval">15:40-16:00</td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-16-0">Determination of Photocatalysts Optical Properties: A Methodology</a></span><span class="cell-name">Luis Ramos Huerta</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-16-1">The Best Strategy to Kick a Penalty</a></span><span class="cell-name">Víctor Manuel Martínez Cortés</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-16-3">Dual-beam laser trap for optical stretching of bi-concave human red blood cells  </a></span><span class="cell-name">Nahum Méndez Alba</span></td></tr>
+<tr><td class="cell-time-interval">16:00-16:20</td><td class="cell-event cell-coffe-break" rowspan="1" ><span class="cell-title">Coffe Break</span></td><td class="cell-event cell-coffe-break" rowspan="1" ><span class="cell-title">Coffe Break</span></td><td class="cell-event cell-coffe-break" rowspan="1" ><span class="cell-title">Coffe Break</span></td><td class="cell-event cell-closure" rowspan="4" ><span class="cell-title">Closure</span></td></tr>
+<tr><td class="cell-time-interval">16:20-16:40</td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-18-0">History of Computers</a></span><span class="cell-name">Luis Manuel Arrieta Ávila</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-18-1">Magnetic stimulation effects on spinal cord injury model</a></span><span class="cell-name">Miguel Flores Leal</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-18-3">Fundamental study of the Oxidative Dehydrogenation of ethane over a NiO in a packed bed reactor with low tube to particle diameter ratio: Evaluation of kinetics and hydrodynamics in heat transfer</a></span><span class="cell-name">Alejandro Romero Limones</span></td></tr>
+<tr><td class="cell-time-interval">16:40-17:00</td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-19-0">Brownian Stirling engine</a></span><span class="cell-name">Ana Elisa Zamudio  Murillo</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-19-1">Permeation of H2 in a Pd-Ag membrane from a binary mixture H2 / CO2</a></span><span class="cell-name">Mara Ximena Cordero García</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-19-3">Hydrodeoxygenation of guaiacol over rhodium supported on HY </a></span><span class="cell-name">Andrés Augusto Granados Focil</span></td></tr>
+<tr><td class="cell-time-interval">17:00-17:20</td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-20-0">The space charge effect on the grain boundary conduction of GdBaCo2O5+δ </a></span><span class="cell-name">César I. Ramos Villegas</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-20-1">Thermodynamics of a higher dimensional noncommutative anti-de Sitter-Einstein-Born-Infeld black hole</a></span><span class="cell-name">Blanca Angélica González Morales</span></td><td class="cell-event cell-short-talk" rowspan="1" ><span class="cell-title"><a href="#event-20-3">Scalar Field and the Dark Side of the Universe</a></span><span class="cell-name">Belén Carvente Mendoza</span></td></tr>
+</tbody></table></div>
+ 
+<div class="abstract-box hidden" id="event-0-1">&nbsp;<div class="abstract" title="Stability in the General Economic Equilibrium"><h1 class="abstract-title">Stability in the General Economic Equilibrium</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Natanael Fernando Márquez Juárez</div>
+<div class="abstract-content"><p>Few issues in economics have been as studied and controversial as the General Economic Equilibrium Theory has been. The notion that any competitive economy achieves general equilibrium posed three mathematical problems inherent in it. The first problem concerning existence had already been addressed unsuccessfully by Leon Walras in his Eléments d'Economie Politique Pure in 1874. It was not until the middle of the last century when Arrow and Debreu, assisting in the most developed microeconomics theory and in the advances in mathematical analysis that could provide satisfactory proof of the problem of existence. </p>
+<p>
+The second problem that studies the uniqueness, was developed by the works of Debreu in the 70. Citing the concept of regular economies for that purpose. This rather technical problem would not present major difficulties when developing the theory of general equilibrium to dispel the conditions of uniqueness. 
+
+The aspect of general equilibrium stability, on the other hand, has been the most controversial and perhaps most important once the first problem of general equilibrium has been solved. Stability, which is the third problem, has historical significance for the prevailing economic theory from the Laissez-faire of the physiocrats and the invisible hand of Adam Smith. If the question of stability had a positive answer, it would suggest that market forces can adjust themselves without State intervention. The main actor in this still open problem is the function of excess demand. Since Samuelson modified the Walrasian groove logistics to study stability, many works appeared in this line. One of those representative and important works we find in Saari. Saari demonstrates that convergent price mechanisms require an overwhelming amount of information from the excess demand function and that this information can not be reduced. Secondly, Saari focuses on the study of the complexity of price dynamics, concluding that the existence of effective price mechanisms exists but it is not known exactly how or what it could be.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-0-2">&nbsp;<div class="abstract" title="Asymmetrical Sp3 Boron Atoms With Poly(Ethylene Glycol) Bridges As Single Lithium Ion Conducting Polymer Electrolytes"><h1 class="abstract-title">Asymmetrical Sp3 Boron Atoms With Poly(Ethylene Glycol) Bridges As Single Lithium Ion Conducting Polymer Electrolytes</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Gregorio Guzmán González</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Laboratorio de electroquímica</div>
+<div class="abstract-content"><p>Single lithium ion conducting polymers electrolytes (SLICPE) are characterized by a high lithium ion transference number and  low  concentration polarization [1]. However, the ionic conductivity values need to be increased in order to obtain better performance in batteries. In general, two different approaches are used to increase the ionic conductivity in SLICPE, the first consists of a simple process of mixing lithium polymer salts with flexible polymers such as Poly(ethylene oxide)  (PEO) . However, in this type of SLICPE phase separation between the polymer matrix and the lithium polymer salt can be generated, causing loss of contact between the electrode and the electrolyte, as well as conductivity decrease. The second form of elaboration of SLICPE consists of the synthesis of copolymers containing units with a relatively large segmental movement, which have anions covalently bonded to the polymer. However, the synthesis of this type of SLICPE is generally complicated and expensive [2].</p>
+<p>In this work, we report the electrochemical characterization of a series of SLICPE based on sp3 boron atoms, homogeneously distributed in a way by means of poly(ethylene glycol) PEG bridges of different lengths that allow  easily modulating the physical, electrochemical and ionic conduction properties. SLICPE were synthesized by a conventional fusion method, and samples were characterized by NMR, and electrochemical impedance spectroscopy (EIS) in symmetrical cells in the range between 20 and 90°C. In addition, the effect of charge delocalization present in BO4- groups, associated to strong electron-withdrawing substituents and their effect on the ionic conductivity in SLICPE, was studied.</p>
+<p>Results indicate a decrease on the activation energy for Li+ transport as function of the ethoxy chains length from 0.053 to 0.023 eV for the PEG chain of one and eight ethoxy groups, respectively. These results suggest that in short ethoxy chains the ion conduction mechanism is predominantly owed to hopping between boron centers (B-EO-B) while in larger chains it evolves to a hopping mechanism between boron atoms and ethoxy groups (B-(EO)n-B). In general, the analysis of the results indicates that the ionic conductivity (10-4 Scm-1 @ 60°C). However, these values can increase in a function of the degree of delocalization of negative charge on the receptor anion and make this class of polymer electrolytes promising candidates for LIB specially at elevated temperatures.</p>
+</div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-0-3">&nbsp;<div class="abstract" title="Characterization of auditive, olfactory and sensory pathway functions by anisotropic di_usion using Nuclear Magnetic Resonance Imaging."><h1 class="abstract-title">Characterization of auditive, olfactory and sensory pathway functions by anisotropic di_usion using Nuclear Magnetic Resonance Imaging.</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Héctor Ramírez Flores</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Hospital Infantil de México Federico Gómez</div>
+<div class="abstract-content"><p>Introduction: One of the Nuclear Magnetic Resonance Imaging techniques is diffusion tensor imaging (DTI), which measures the rate of diffusion of extracellular water molecules found in tissues. DTI tractography allows virtual dissections of functional white matter tracts in the human brain in vivo using regions of interest (ROI). The intricate trajectories of these pathways that can be identified using diffusion-weighted MRI provide an important anatomical reference for evaluation of clinical disorders commonly associated in auditive, olfactory and sensory systems in pediatric brain [2].</p>
+<p>
+Methods: 18 healthy children (ages 4-16 yrs) were examined. Imaging was performed in a 1.5T Philips scanner, using a head coil with SENSE technology and 8 channels were used for fast imaging with a sequence of Fast Echo Planar Diffusion Weighted Imaging covering the whole brain, TR = 7711s, Echo train length 63, 90 flip angle, acquisition matrix 124x124, 15 directions of noncollinear gradients with fat suppression, 2mm gap. The diffusion tensor (DTI) was analized using MedINRIA (https://med.inria.fr/), diffusion tensors were calculated pre- and post- motion correction to obtain Fractional Anisotropy (FA) and ADC values. Segmentation of the different regions was manually drawn on midline sagittal 3D-T1 images[1]. The study was approved by the Ethical Review Board.
+
+Results: The values of FA obtained with their respective variance are, auditive system (0.335 ± 4.02 x 10-2; 0.418 ± 4x 10-2) (a.u.), olfactory system (0.278 ± 6x10-3 ; 0.4348 ± 6x10-3)(a.u.) and sensory sistem (0.412 ± 2 x 10-2 ; 0.4861± 4.1 x 10 -2) (a.u.). The values of ADC obtained with their respective variance are, auditive system (1.985 ± 4x 10-2; 2.52 ± 9.8 x 10-2) 10-3 mm2/s, olfactory system (1.7984 ± 0.01 ; 2.76 ± 0.014)10-3 mm2/s and sensory system (1.951 ± 0.063 ; 2.304 ± 0.1373)10-3 mm2/s.
+
+Discussion and conclusions: The figures show FA and ADC of the auditive system(Figure 1), olfactory sistem (Figure 2) and sensory system (Figure 3). It can be seen that the FA and ADC values change according to age and sex, being created a basic pattern of the maturation process in pediatric patients as a decrease in ADC values and an increase in FA values as a function of gestational age according to the cerebral development or the specialization of the functional tracts of white matter. During this process, structures such as cell and axonal membranes become more densely packed, and the restriction to diffution of water molecules increases and consequently ADC values decreases. For white matter areas, white matter anisotropy is relatively low in newly born pacients and increases steadily with increasing age, what can be observed in the values obtained from FA. MR methods are important for clinical studies and for evaluation of various neurologic disorders that affect all these systems. DTI is a promising modality for the study and analysis of brain development and abnormalities
+
+References:
+R Nieuwenhuys, J Voogd, C Van Huijzen . (2007). The Human Central Nervous System. 2008: Springer.
+Fadeel, S. R., Montasser, M. M., Etaby, A. N., & Darweesh, R. M. (2015). The role of diffusion weighted magnetic resonance imaging in assessment of normal myelination in infantile brain. Alexandria Journal of Medicine, 51(3), 271-276.
+</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-0-4">&nbsp;<div class="abstract" title="Spatial analysis of fish richness of the Eastern Tropical Pacific"><h1 class="abstract-title">Spatial analysis of fish richness of the Eastern Tropical Pacific</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Javier Rosas López</div>
+<div class="abstract-content"><p>The richness of species is an indicator of the biological diversity of a geographical area and has been referred to as a proxy to know the functioning of ecosystems. To date, large regions of the ocean for which the species richness is unknown are still not prospected. Therefore, the objective of determining the spatial variability of the fish richness of the Tropical Eastern Pacific arises, through geostatistical techniques, such as spatial prediction, which allow to obtain values of richness for unsampled sites. The results obtained indicate a concentration of species richness in island zones, mainly in Galapagos, Malpelo, Cocos and Revillagigedos. The Mexican and Central American coasts were also determined with high indices of fish richness.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-1-1">&nbsp;<div class="abstract" title="A hydrodynamic and kinetic model to describe the formation of calcium carbonate deposits in pipelines"><h1 class="abstract-title">A hydrodynamic and kinetic model to describe the formation of calcium carbonate deposits in pipelines</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Héctor Gómez Yáñez</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>PhD student at UNAM School of Engineering </div>
+<div class="abstract-content"><p>calcium and carbonate ions are dissolved. The result of the interaction between calcium and carbonate ions in a supersaturated system is the growth of solid calcium carbonate over the pipe walls. The present study describes the physical and chemical phenomena of mass transport of the chemical species, from the bulk solution to the pipe walls, inside a straight circular pipe. The mass transfer coefficient is estimated using correlations for developing laminar flow. The controlling mechanism is assigned using the Damköhler number and the model simulation results are analyzed for three scenarios: when the deposition is controlled by mass transfer, by mixed control or by the deposition kinetics. When mass transfer is the controlling mechanism, the deposit was concentrated at the pipe entrance, while with kinetic control, it forms further downstream. This study found that most important factor influencing the deposition process is the bulk and superficial pH values. </p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+ 
+<div class="abstract-box hidden" id="event-1-3">&nbsp;<div class="abstract" title="Selective Catalytic Reduction of NOx with NH3 in small pore zeolites for diesel engines."><h1 class="abstract-title">Selective Catalytic Reduction of NOx with NH3 in small pore zeolites for diesel engines.</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Gabriela Itzel Hernández Salgado</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Laboratory of catalysis and advanced materials</div>
+<div class="abstract-content"><p>Cu / zeolites are common catalysts for the removal of contaminating NOx from the effluent of internal combustion engines that operate in excess of oxygen, ie, diesel or poor combustion engines by NH3-SCR. The latest generation of catalysts involves the use of zeolites with the Chabazite structure, such as SSZ-13. These materials have a high NOx reduction activity, good selectivity towards N2 and high hydrothermal stability. Despite the ongoing research efforts, the nature of Cu ions in ion exchange sites of SSZ-13 has not been fully understood. In order to shed light on the origin of high activity and thermal stability of Cu-SSZ-13, it is critical to understand the nature (oxidation state, location, redox properties, etc.)of Cu ions and the active centers in the SCR reaction. Toward this goal, here we investigate the reactivity and structure of Cu-SSZ-13 catalysts with different copper loadings of 1.2, 2.12 and 14.8% wt. in the selective catalytic reduction of NOx using NH3 as a reducing agent (NH3-SCR-NOX) under conditions similar to those of a diesel engine. An activity and selectivity higher with the catalyst 2.12% wt. in NH3-SCR-NOX were observed, in comparison with other copper loadings. These results revealed that copper loading is a function of catalytic activity. UV-vis in situ and ex-situ spectrometry was used to determine the structure of Cu species. There were significant changes in its distribution due to the reaction when 2.12% by weight of catalyst was studied. There are different Cu + / Cu2 + species, Cu and Cu0 dimers (Cu surface plasmon), and their distribution is affected by the reaction. They restructure both during heating and cooling in the atmosphere of the reaction mixture. It is possible that the cationic species can control the reaction at low temperature, while their nanoparticles seem to play an important role at a high reaction temperature.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-1-4">&nbsp;<div class="abstract" title="Structure of the invariant states of the generators of the weak coupling limit type"><h1 class="abstract-title">Structure of the invariant states of the generators of the weak coupling limit type</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Álvaro Hernández Cervantes</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Department of Mathematics</div>
+<div class="abstract-content"><p>In this short talk we will introduce the generators of the weak coupling limit type. Later we will describe some invariant states and, finally, we will present results about the structure of the invariant states of these generators. </p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-2-0">&nbsp;<div class="abstract" title="Plenary 1|Effective medium equations: applications and limitations"><h1 class="abstract-title">Effective medium equations: applications and limitations</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>J. Alberto Ochoa Tapia</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Deparment of Chemical Engineering</div>
+<div class="abstract-content"><p>In the first part of the talk, we use the methodology based on the volume averaging to derive the macroscopic model for diffusion and reaction in a catalytic porous particle. In this way, the salient steps to obtain the spatially smoothed equation and the effective coefficients are outlined. The characteristic length restrictions of the model obtained, that are valid in the bulk of homogeneous porous media, are identified. In this way, the limitations of this kind of approach can be stated.</p>
+<p>Latter, I discuss the one-domain approach (ODA) and the two-domain approach (TDA). These are introduced to deal with the breaking of the above-mentioned restrictions. This occurs due to the abrupt change of the microstructure at the boundary of the porous medium region.</p>
+<p>Finally, some recent results on the average velocity behavior in neighborhood of the inter-region fluid/porous medium are presented. </p>
+</div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-2-1">&nbsp;<div class="abstract" title="Plenary 2|Internationalism in an Age of Nationalism: Building Mutual Understanding through Student Exchange"><h1 class="abstract-title">Internationalism in an Age of Nationalism: Building Mutual Understanding through Student Exchange</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Colman Cumberland</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>CELEX</div>
+<div class="abstract-content"><p>What is the value of student exchange? How does educational mobility improve our academic abilities and widen our personal perspectives? Explore these questions and more with Colman Cumberland, a Fulbright-García Robles grantee visiting as an English teaching assistant at CELEX. Colman studied Political Science at Temple University in Philadelphia and studied abroad at the University of Havana in Cuba. Exchange programs allow one to develop cross-cultural understanding, reflect on one’s place in the world, and develop international bonds of trust. Given the rise of increasingly nationalist rhetoric and policy in many nations, the purpose of this presentation is to reflect on how we as students might build mutual understanding between peoples of different nations. It is my conviction that student exchange must be of reciprocal benefit to all, must go beyond mere understanding and lead to action on international issues. Furthermore, I wish to underscore the importance of not considering student exchange in a vacuum, but as part of an interwoven economic and social fabric.</p>
+</div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-2-2">&nbsp;<div class="abstract" title="Plenary 3|Studying and research in Germany"><h1 class="abstract-title">Studying and research in Germany</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Alejandro Cadena Ramos</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>DAAD</div>
+<div class="abstract-content"><p>In this talk, we will provide general information about the opportunities for masters and doctoral studies in German universities. In addition, we present our offer of scholarships for Mexicans who wish to make academic stays at the graduate level in Germany.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-2-3">&nbsp;<div class="abstract" title="Plenary 5|Traveling wave solutions of PDE"><h1 class="abstract-title">Traveling wave solutions of PDE</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Patricia Saavedra Barrera</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Deparment of Mathematics</div>
+<div class="abstract-content"><p>Many non-linear partial differential equations and systems have traveling wave solutions: Burger’s equation, Korteweg de Vries, reaction-diffusion systems, conservative systems as the one dimensional isentropic compressible Navier-Stokes equations and traffic flow equations. A change of coordinates allows us to transform the problem to a non-linear first order ODE where it can be proved, using results from dynamical systems, the existence of non-homogeneous solutions. Several examples will be presented.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-2-4">&nbsp;<div class="abstract" title="Plenary 6|The role of electrochemical energy systems in the renewable energy sector"><h1 class="abstract-title">The role of electrochemical energy systems in the renewable energy sector</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>G. Ramos-Sánchez</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Deparment of Chemistry</div>
+<div class="abstract-content"><p>Regarding Renewable energy generation, the Mexican government has set targets of 25% generations by 2018, 30% by 2021, 35% by 2024, and finally an ultimate target of 50% by 2050. Due to these specific targets, a tremendous amount of growth has occurred in order to keep up the demand of electrical energy as well as a tremendous effort to harvest sun, wind, biomass and ocean energy. However, harvesting renewable energy is only the first step towards a broad utilization of renewable energy. All renewable energies are in higher or lower degree, intermittent energy sources which can dispatch electrical energy at the very specific moment in which the source is available but with very long periods in which there is no source at all; moreover, even for a continues energy generation (sun energy during sun hours) the amount of energy is not constant and it depends on several weather conditions. In this aspect electrochemical energy storage and generation is planned to have a great impact on the energy sector, ads the devices are capable to offer availability, quality and diversification to the generated energy. In this talk the pros and cons of the main electrochemical energy devices, batteries and fuel cells, will be discussed, and the most recent advances on the research, devices and systems at UAM-Iztapalapa will be presented. </p>
+</div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-3-1">&nbsp;<div class="abstract" title="Wernicke´s area and Broca´s area in functional connectivity of language."><h1 class="abstract-title">Wernicke´s area and Broca´s area in functional connectivity of language.</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Fernando Villanueva Junes</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Departamento de Física</div>
+<div class="abstract-content"><p>Magnetic resonance imaging is a technique used to form images of anatomical and physiological processes. On the other hand, MRI images by the diffusion tensor are based on measurements of the diffusion water along different directions, these measurements allow to calculate the diffusion tensor. Apparent diffusion coefficient (ADC) is a measure of the magnitude of diffusion of water molecules within a tissue. Fractional anisotropy (FA) shows the direction of the diffusion.The diffusion of the extracellular water molecules changes along of the myelin, Diffusion Tensor Imaging maps those trajectories. The language model is thought to involve two basic brain areas. Broca's area associated with speech production and Wernicke's area associated with speech comprehension. In this work, FA and ADC are measured of the Broca’s and Wernicke’s areas in children. The ADC and FA values were measured for Wernicke and Broca areas. Pearson correlation was used to understand an association between FA and ADC, healthy and patients with language problems. DTI is a useful tool in identifying the structural connectivity between language areas. Future studies will allow to document and standardize his values in the developing pediatric brain and to detect abnormalities in patients with specific language disorders.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-3-2">&nbsp;<div class="abstract" title="Correlation filter review"><h1 class="abstract-title">Correlation filter review</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Oliver G. Campos Trujillo</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>lab de neuroimagenologia</div>
+<div class="abstract-content"><p>Correlation filters have been applied successfully in disordered images because they allow to identify a target and obtain its position in the image because the correlation operator is considered an estimator of maximum likelihood. This work intends to be a brief review on the properties and state of the art of the correlation filters. In addition, a demonstration applied in image registration will be presented.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-3-3">&nbsp;<div class="abstract" title="Minimum Number of Matches Problem in Heat Recovery Network Design Using the Metaheuristic Optimization Technique-Tabu Search"><h1 class="abstract-title">Minimum Number of Matches Problem in Heat Recovery Network Design Using the Metaheuristic Optimization Technique-Tabu Search</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Luis Eduardo Pedroza Robles Arenas</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Laboratory of Synthesis, Optimization and Processes Simulation </div>
+<div class="abstract-content"><p>The use of energy is present in all human activities. Greenhouse gases and climate change are some of the effects of a model society based on excessive energy consumption. The industrial sector is characterized by using energy intensively, positioning itself as the sector of greatest consumption. Additionally their associate energy systems represent an important part of the total cost of the process itself. For these reasons, the integration projects in industrial sites are one of the best ways of improves energy utilization.</p>
+<p>The design of heat exchanger networks (HEN) is a very important topic in chemical engineering and one of the key factors in a profitable industry since links the process flowsheet and the utility system by the development of systematic methodologies to utilize the available heat from processes streams in an efficient way. </p>
+<p>Particularly the mathematical programming procedures seeks generate HEN designs automatically with the minimal handmade in which a compromise between operation cost (utility system) and capital cost (units of heat exchangers) has to be considered to conclude in the best possible network design in cost terms. On the other side, HENS is a challenging task since it results in a combinatorial, non-linear and a non-convex optimization problem. To overcome the aforementioned difficulties sequential methodologies are a useful approach. These methodologies decompose the original problem into a set of computationally simpler sub-problems. Even when sequential strategies cannot guarantee a global optimal solution because considerable networks are omitted in the assumptions and simplifications of each sub-problem, there are still a practical way of construct efficient feasible networks. Usually the sequential method decomposes the original HENS problem into the three sub-problems (Biegler et al., 1997): (i) minimizing utility cost as a linear program (LP) mathematical model, (ii) minimizing the number of matches as a mixed integer linear programming model (MILP), and (iii) minimizing the investment cost as a nonlinear program (NLP).</p>
+<p>This work investigates the minimum number of matches sub-problem (Cerda and Westerberg, 1983) which is the main bottleneck in the sequential strategies. This problem belongs to an especially difficult class of problems named NP-Hard in the strong sense; in computational complexity theory this means that it is not possible to develop a deterministic algorithm to solve the problem in an efficient time.</p>
+<p>Tabu Search (Glover & Laguna, 1997).) is a meta-heuristic approach for solving combinatorial optimization problems by using a guided, local search procedure to explore the entire solution space without becoming easily trapped in local optima. In overview, the overall approach consist of avoid get trapped in local optima by forbidding or penalizing moves which take the solution, in the next iteration, to points in the solution space previously visited (hence “tabu”), The method is still actively researched, and is continuing to evolve and improve. Tabu search method has been successfully applied to a several chemical engineering problems, however the minimum matches sub-problem for heat exchanger networks it has only been solved with deterministic and approximated mathematical methods. In this work a comparative between a deterministic CPLEX/GAMS solver and a Tabu Search fully programmed form the root is carried out. Some benchmark representative problems in HENS are considered to prove the advantages and deficiencies of the Tabu Search method.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-4-1">&nbsp;<div class="abstract" title="Comparative study of the quantum efficiency of 4 elements of the Sumerged Acuatic Vegetation in the coasts of The Gulf of Mexico and Yucatan."><h1 class="abstract-title">Comparative study of the quantum efficiency of 4 elements of the Sumerged Acuatic Vegetation in the coasts of The Gulf of Mexico and Yucatan.</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Sergio Armando Fuentes Agueda</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Seagrass laboratory in UAM-I</div>
+<div class="abstract-content"><p>Seagrasses are angiosperms that life mostly in the ocean. Also they have an ecological and economical importance, like having a highly primary production (500-4000 g carbón/m2/year) and give nursement to invertebrates, like crustaceans and bivalves, fishes and other important economical species like octopus. One of the strategies for evaluating the health of seagrasses is the evaluation of the quantum efficiency, which is the register of the activity of the photosystem 2 in plants. The dark adapted method, is the most convenient and useful method in seagrasses. Not only it helps us to measure quantum efficiency (Fv/Fm) in basal status also it is related to the oxygen consume and carbon assimilation. The objective of the study was to obtain the basic parameters of Fv/Fm (Average, maximum and minimum) of the species Thalassia testudinum, Hallodule wrightii, Syringodium filiforme y Caulerpa paspaloides var. wurdemanni. Vertical shots and fronds of T. testudinum, H. wrightii, S. filiforme and C. paspaloides var. wurdemanni were collected in the coasts of Campeche and Yucatan during the years 2016 and 2017. They were in dark conditions in less than 24 hours and with a Pulse-amplitude modulated (PAM) chlorophyll fluorometer it was register the Fv/Fm of the youngest leafs and fronds. T. testudinum with 1341 registers it has an average of 0.725 and a maximum and minimum of 0.841 y 0.131 respectively. H. wrightii with 459 registers it has an average of 0.679 and a maximum and minimum of 0.841 y 0.131 respectively. S. filiforme with 603 registers it has an average of 0.696 and a maximum and minimum of 0.838 y 0.153 and C. paspaloides var. wurdemanni  with 500 registers it has an average of  0.585 a maximum and minimum of  0.774 y 0.054. Although the literature records that seagrasses that has mora than 0.7 are healthy, we see that H. wrightii, S. filiforme and C. paspaloides var. wurdemanni has less than that value. It could be explain that these species their photosystem 2 required less electrons for their photosynthetic activities. We can conclude that T. testudinum is the species that has more quantum efficiency and is resilient to temperatures and tide changes. </p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-4-2">&nbsp;<div class="abstract" title="The cool kids of Complexity Theory: NP-complete problems"><h1 class="abstract-title">The cool kids of Complexity Theory: NP-complete problems</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Ismael Ariel Robles Martínez</div>
+<div class="abstract-content"><p>We will review the definition of NP-Complete problem and we will study some classic examples of this kind of problems. </p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-4-3">&nbsp;<div class="abstract" title="Exact solution for the confined hydrogen atom as a starting point for the design of basis set functions"><h1 class="abstract-title">Exact solution for the confined hydrogen atom as a starting point for the design of basis set functions</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Michael Adán Martínez Sánchez</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Departamento de Química</div>
+<div class="abstract-content"><p>In this work the Schrödinger equation is solved exactly when the hydrogen atom is immersed in the center of a spherical cavity with penetrable and impenetrable walls. In this context, the term penetrable implies that the wave function can be extended through the region outside the confinement cavity, also called classically forbidden region; and the term impenetrable means the opposite case, where the wave function only exists inside the cavity.</p>
+<p>The confinement potentials considered in this study are: infinite potential (which represents impenetrable walls), finite height well, continuum dielectric and an isotropic harmonic oscillator being these last three cases, potentials of penetrable type. The results of this work show the impact of every confinement potential over the fundamental properties of the atom and constitute the reference for the design of basis sets functions for multi-electronic atoms confined under same spatial restrictions or by similar potentials.</p>
+<p>Slater-type functions and Gaussian-type functions were also used to solve these problems through Ritz's method, showing that it is necessary to use a considerable number of functions if they do not have the correct asymptotic behavior dictated by the exact solution.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-6-1">&nbsp;<div class="abstract" title="Hydrometallurgy process for the recovery of copper from mining tailings in the state of Zacatecas. "><h1 class="abstract-title">Hydrometallurgy process for the recovery of copper from mining tailings in the state of Zacatecas. </h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Ángel Ruiz Sánchez</div>
+<div class="abstract-content"><p>Mining tailings are mineral waste after recovering metals with greater interest (Cu, Ag, Au, Zn). Therefore, this waste contains toxic metals (As, Pb, Cd, and Hg) and different sulfides (main pyrite) responsible for the generation of acid mine drainage (AMD), which allows the mobility of toxic metals and consequently the contamination of aquifers. However, the incomplete extraction of metals of economic interest in traditional processing allows these residues to be considered as a possible resource for the recovery of some metals, for example, copper. In this sense, a study of the different chemical phases and the content of metals is important, first to identify the danger of them, and second, to propose a process that helps stop the generation of AMD but also allows the recovery of copper at moderate conditions.</p>
+<p> Therefore, in this work, a sample of mining tailings from Zacatecas was studied. The results confirmed the generation of acid mine drainage (AMD) and the chemical analysis yielded the following metallic content: 6 kg of Cu, 9 kg of Zn, 1.47 kg of Pb and 210 kg of Fe, per ton of mine tailings, respectively. In addition, through the sequential extraction technique, it was confirmed that 90% of the total phases are sulfides, silicates and inert material; while 10% are oxides, sulfates and carbonates (solid phases that are easy to leach under moderate conditions). Finally, a complete process was proposed (leaching, purification of the solution by extraction with solvent, extraction and, electrodeposition) for the recovery of 75% of copper at room temperature in an aqueous solution of sulfuric acid.</p>
+</div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-6-2">&nbsp;<div class="abstract" title="Plenary 4|Publish or perish? Key points to consider when writing and submitting research to a scientific journal"><h1 class="abstract-title">Publish or perish? Key points to consider when writing and submitting research to a scientific journal</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>José A. Ayala Mercado</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Mexican Journal of Physics</div>
+<div class="abstract-content"><p>Publishing one's original and high quality research represents not only the summit of an intellectual effort that pushes the boundaries of knowledge but also a means to gain recognition and all the perks associated with it: credibility, access to funding, the possibility to continue producing knowledge, etc. However, carrying out high quality research represents only the first of a series of steps toward publication. The other next important step is reporting such research in a clear, concise and well structured manner aiming to the right audience. In this talk I will describe the key points to keep in mind when writing a scientific paper with the purpose to publish it in a high quality journal with a well established reputation. I will provide examples as to how we carry out the editorial process in Revista Mexicana de Fisica starting from an initial screening of submitted work, continuing with the selection of appropriate referees and ending with  efficiently communicating to authors the results of such process, which can be either accepting or declining their work. I will point out the main features that declined works share and how these can be avoided to improve the chances that the work is published.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-6-3">&nbsp;<div class="abstract" title="A symmetry behind quantization process"><h1 class="abstract-title">A symmetry behind quantization process</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Manuel de la Cruz López</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Physics Department</div>
+<div class="abstract-content"><p>It is well known that the process of quantization of a classical system needs to be performed on a closed and periodic path in phase space according to Born-Sommerfeld condition. The classical systems, on the other hand, must be describe physics defined with parameters, constants of motion and equations of motion taken to be real. If we complexify a classical system;  is possible to understand some key features in the corresponding quantum version. In this talk we show how implement complex values to classical systems in order to understand a subset of solutions with physical realty and his relation with the so-called PT symmetry and the quantization procedure.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-10-0">&nbsp;<div class="abstract" title="Peripheral dose measurement in hypofractionated treatments of breast cancer patients submitted to tomotherapy using thermoluminiscent dosimeter"><h1 class="abstract-title">Peripheral dose measurement in hypofractionated treatments of breast cancer patients submitted to tomotherapy using thermoluminiscent dosimeter</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Omar Medina Arreguín</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Departamento de Física</div>
+<div class="abstract-content"><p>Thermoluminescence Dosimeters (TLDs) are widely used for in vivo dosimetry of ionizing radiations because they have shown to provide dose readings with an accuracy of 2% creating new opportunities to advance in radiation therapy dosimetry, particularly in tomotherapy. The purpose of this work was to evaluate peripheral dose (PD) in breast cancer patients submitted to hypofractionated tomotherapy treatment using LiF:Mg,Ti TLDs. Results showed  that thyroid received a dose approximately 20% to 40% of the breast dose. </p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-11-0">&nbsp;<div class="abstract" title="Average velocity profile in a channel partially filled with a porous medium"><h1 class="abstract-title">Average velocity profile in a channel partially filled with a porous medium</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Roel Hernández Rodríguez</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>POSGRADO EN INGENIERÍA QUÍMICA</div>
+<div class="abstract-content"><p>In this work, it is shown that the one-domain approach (Goyeau et al, 2003) can be used to model precisely the average fluid velocity in a channel partially filled with a porous medium. This conclusion is drawn from the comparison of the averages obtained from the solution of the effective transport equations, with position dependent coefficients, and the ones resulting by direct integration of the local velocity values. These were obtained by the solution of the boundary value problem given by Stokes and continuity equations subjected to the no slip condition at the surface of the solid particles and the limiting walls of the channel. It must be mentioned that the comparison at the transition region between the porous media and the fluid is also very good.  </p>
+<p>Initially, the methodology was derived for porous media formed by parallel plates. In this way, the local velocity, the average velocity, the permeability and the fluid volume fraction could be obtained by analytical expressions (Ochoa-Tapia et al, 2017). However, recently the same kind of results has been obtained using particulate porous media, which for the comparison required the numerical solution of the fully developed Stokes flow problem in the whole system. In principle, the methodology could be extended for porous media of microstructure as complex as required.</p>
+</div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-11-4">&nbsp;<div class="abstract" title="Characterization of hydrodynamics, heat and mass transport under abiotic and biotic condition in a tray bioreactor for the production of proteases out of agroindustrial wastes"><h1 class="abstract-title">Characterization of hydrodynamics, heat and mass transport under abiotic and biotic condition in a tray bioreactor for the production of proteases out of agroindustrial wastes</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Gerardo Atlantis Gómez Ramos</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Laboratorio de ingeniería química y sistemas biológicos</div>
+<div class="abstract-content"><p>The solid-state fermentation (SSF) has gained attention in recent years in the biotechnology industry due to its great potential in the production of biologically active metabolites, namely enzymes, biofuels, food additives, precursor molecules for chemical and pharmaceutical industries, among other high value metabolites. Despite the technological advances in SSF processes, there have not been sufficient studies related to the characterization, design and intensification of tray bioreactors. However, the state of the art in the fundamentals of reactor engineering offers a useful avenue for the conceptual design and intensification of this class of bioreactors, involving a microscopic characterization of the phenomenological interaction among kinetics and transport phenomena that occurs within the bioreactor. </p>
+<p>The objective of this work is to characterize hydrodynamics, heat and mass transport under abiotic and biotic conditions in a tray bioreactor for the production of proteases (SSF) with Yarrowia lipolytica using agroindustrial wastes. This work accounts from the design of experiments to the development of models aimed at characterizing transport phenomena and kinetics under abiotic and biotic conditions, respectively. </p>
+<p>The bioreactor operates in two stages, the first abiotic operation (without reaction) for the characterization of transport phenomena (hydrodynamics, heat transfer and mass transfer) and the second stage (biotic) consisting of the SSF for the production of proteases. In the abiotic stage, first, the pressure drop is determined at different inlet flows. This information is transferred to the Navier-Stokes equations coupled to Darcy and Forchheimer to describe the velocity field in the tray bioreactor.  Second, heat transfer experiments in the absence of reaction allow the determination of the corresponding parameters, namely the wall heat transfer coefficient, and the effective thermal conductivity, fittings the temperature observations with a 2D pseudo homogenous model accounting for hydrodynamics. Third, mass transfer experiments are carried out to determine the mass transfer dispersion coefficient by fitting effluent concentration of CO2, compound used as the tracer, with a 2D pseudo homogenous model. In the biotic stage, an extrinsic but macroscopic kinetic model, based on the effluent observations of O2, CO2, H2O and protease activity, is developed. </p>
+<p>Studies on biotic conditions allow the characterization of how transport phenomena interact with kinetics. In heat transfer, effective thermal conductivity and wall heat transfer coefficient present a value of 0.158 W m-1 K-1 and 0.0511 W m-2 K-1 at the studied inlet volumetric flow. In mass transfer studies, the dispersion coefficient presents values ranging from 0.123 to 0.220 m2 s-1 at inlet flows between 200-400 mL/min, respectively. During the SSF, the maximum the production of CO2, 11.83 mg g-1 h-1,  and protease activity (40 U gms-1) were obtained at 36 hours of culture.</p>
+</div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-12-0">&nbsp;<div class="abstract" title="Tunable Diode Lasers"><h1 class="abstract-title">Tunable Diode Lasers</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Luis Alberto Nava Rodríguez</div>
+<div class="abstract-content"><p>Given the small size and high efficiency of diode lasers, these have a wide range of applications such as laser pointers, printers, CD players, optical communication, science investigation, among others. They can be found from infrared to ultraviolet emitting frequencies, however, with the necessity of tunable light sources came the development of tunable diode lasers. In this talk I will describe two commonly used techniques to achieve frequency tuning and reduction of diode laser linewidth, and mention some applications in optical and atom physics.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-12-4">&nbsp;<div class="abstract" title="Free-energy model for nano-particles self-assembly by liquid crystal sorting"><h1 class="abstract-title">Free-energy model for nano-particles self-assembly by liquid crystal sorting</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Noé de Jesús Atzin Cañas</div>
+<div class="abstract-content"><p>We modeled the experimentally observation sefl-assembly of nano-particles into shells with diameters up 10 microns, via segretion from growing nematics domains. Using field-based Monte Carlo simulations, we found the equilibrium configurations of the system by minimizing a free-energy funtional.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-14-0">&nbsp;<div class="abstract" title="Some reducibility criteria for Polynomials"><h1 class="abstract-title">Some reducibility criteria for Polynomials</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Julio Pérez Hernández</div>
+<div class="abstract-content"><p>In this talk we will review some reducibility criteria for polynomials.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-14-3">&nbsp;<div class="abstract" title="Fluorescence"><h1 class="abstract-title">Fluorescence</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>David Silva Roy</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>SCHOOL</div>
+<div class="abstract-content"><p>Fluorescence is the cause of the transition between the energy levels of the electrons in an atom or molecule. The electron first absorbs a photon with energy equal to the difference in the energy states. The excited state is not stable, and the electron can remain there for a short period of time (from 1ps to 1 μs). When the molecule returns to its stable state, it emits a photon with energy equal to the energy difference in the excited and stable states or passes by a non-radioactive deactivation during which the electrons emit the excess of energy mechanically. Certain substances such as karo brand corn syrup and olive oil may present this phenomenon. An experiment was done in which the amount of fluorescence that these substances have, when illuminated by some type of laser, was measured.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-14-4">&nbsp;<div class="abstract" title="Plenary 7|On the analysis of abdominal signals for fetal heart rate monitoring: a methodology based on Independent Component Analysis"><h1 class="abstract-title">On the analysis of abdominal signals for fetal heart rate monitoring: a methodology based on Independent Component Analysis</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Aída Jiménez-González</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Department Electrical Engineering</div>
+<div class="abstract-content"><p>Today, it is generally accepted that ultrasonography, the traditional method for biophysical antenatal surveillance does not facilitate a comprehensive and reliable assessment of fetal well-being and, thus, the identification of those fetuses whose defense mechanisms against hypoxia are compromised. Consequently, even though this technological option has been used since the end of the 60s, it has been reported that the rate of fetal loss over the last 50 years has not shown a significant reduction and that most of stillbirths have happened in the low-risk group. Although the reasons behind this poor outcome remain unclear, it has been considered that the intermittent, subjective and short-term observations given by ultrasonography should be replaced by (or accompanied with) continuous and long-term observations, which is possible because of the development of technologies and research into non-invasive methods.</p>
+<p> </p>
+<p> These technologies are mainly focused on detecting the fetal heart rate (FHR), which is a significant biophysical parameter whose variations are the earliest defense mechanism of the fetus against hypoxia. To do so, the most popular technologies are based on passive transducers that sense electric, magnetic or vibration signals produced by the fetal heart. The transducers are highly sensitive to detect the very-low energy fetal signals but, since they are positioned on the maternal womb (or adjacent to it), they not only detect information from the fetal heart, but also from maternal and environmental sources (e.g. the maternal heart and line noise). As a result, the recorded signals are rich in fetal information, but usually hidden by maternal and environmental interferences whose characteristics turn the extraction of the former into a difficult and challenging task.</p>
+<p>
+ In this talk, the specific characteristics of the electric (electrocardiographic) and vibration (phonographic) signals recorded on the maternal womb will be outlined and, as soon as the audience becomes familiar with the challenges involved in the recovery of fetal information, the use of a digital signal processing methodology based on Independent Component Analysis will be briefly described. Next, findings of the application of this approach to the recovery of the fetal heart rate from both, phonographic and electrocardiographic recordings, will be presented. Finally, as recently referred to be some authors, we will discuss the need for further research on the extracted sources to address their morphological analysis, since this represent one of the most promising possibilities for this modality of fetal monitoring.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-15-0">&nbsp;<div class="abstract" title=" Ureolytic Biofilm Formation from a Microbial Consortium on Graphite"><h1 class="abstract-title"> Ureolytic Biofilm Formation from a Microbial Consortium on Graphite</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>María Concepción Romero Serrano</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>a Biotechnology Department, Metropolitan Autonomous University</div>
+<div class="abstract-content"><p>Urea Hydrolysis by Biofilms composed of urease producing bacteria are of primordial interest in several fields 1. The ureolysis at circumneutral pH requires water and a proton producing two molecules of ammonium ions and one molecule of bicarbonate ion. The consumption of one proton increases the pH and carbonate mineral precipitation (biomineralization) may proceed when calcium or other divalent cations are present 1. This biochemical process can be useful for applications such as building materials, soil stabilization, and contaminant remediation; it is also of interest to industrial, agricultural and wastewater treatment 1. To increase the ureolysis rate new methods should be sought to maintain bacterial cells adhered to different solid surfaces However, biofilms are generally studied by imaging, rheological and physical techniques which are difficult to implement and do not represent an efficient form of “metabolic” evaluation, thus it is necessary to develop alternative techniques that allow the direct study of the biofilms properties. </p>
+<p>In light of this scenario, the present work proposes the selection of a microbial consortium from cow dung and the study of the formation and growth of an ureolytic biofilm on graphite surfaces by Electrochemical Impedance Spectroscopy (EIS) without noticeable modifications of the biofilm.  EIS spectra were obtained at open circuit potential (OCP) (without additional electric perturbation apart from sinusoidal perturbation ±10 mV), during the time of immersion of graphite in the culture medium, in the absence (Control) and presence of bacteria (Biotic). </p>
+<p>The results indicate that the spectra of both control and biotic conditions exhibit just one time constant. Moreover, spectra adjustment to equivalent electric circuits indicates that the biofilm adhesion is directly related to the modification of the capacitance, while the generation of ammonium ions directly influences the decrease in electrical resistance of the culture medium. The biofilm maturation and its interaction with the graphite surface induces lower charge transfer resistance, which can be applied as a novel technology for the urea hydrolysis. SEM and CLSM images confirm the presence of ureolytic biofilm and confirm the interpretations obtained by EIS. </p>
+<p>
+References
+1. J. M. Connolly, B. Jackson, A. P. Rothman, I. Klapper, and R. Gerlach, npj Biofilms Microbiomes, 1, 15014 (2015) http://www.nature.com/articles/npjbiofilms201514.
+
+</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-15-1">&nbsp;<div class="abstract" title="Kinetic Assessment of the Oxative Dehydrogenation of Ethane Using a NiSnO catalysts"><h1 class="abstract-title">Kinetic Assessment of the Oxative Dehydrogenation of Ethane Using a NiSnO catalysts</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Carlos Alvarado Camacho</div>
+<div class="abstract-content"><p>The oxidative dehydrogenation of ethane (ODH-C2) appears to be the most promising alternative to produce ethylene when compared with conventional processes. Nevertheless, there are nowadays two main challenges to implement the ODH-C2 at industrial level: the design and kinetic characterization of a catalyst leading to a large activity and selectivity to ethylene; and the design of the industrial reactor accounting for the thermodynamic and kinetic properties of the reaction. Due to their selectivity to ethylene, nickel (Ni) and vanadium (V) based catalysts have been identified as the most promising materials for the ODH-C2; nevertheless, their activity regarding conversion is still low to implement these materials at the industrial level.</p>
+<p>
+In this work, the ODH-C2 takes place over a high selectivity NiSnO mixed oxide, which is synthesized by the evaporation method reported elsewhere. To overcome its limitations due to the low activity, this NiSnO mixed oxide is kinetically characterized at reaction operation pressures of 1 bar, temperatures from 350 to 450 °C, and inlet concentration of O2 from 3 to 9 %mol. The NiSnO is evaluated in a microreaction unit, MICROMERITICS PID ENG & TECH model MA12216. The kinetic evaluation of NiSnO uses an experimental design, the rotatable composite central type, based on a response surface method; namely the response variables are conversion of ethane (XC2H6) and the selectivity to ethylene and carbon oxides (Si), whereas the factors temperature, and inlet concentration of O2. 
+
+Finally, using the experimental data obtained of the response surface method, it is relate operating condition with reaction rates and the corresponding reaction mechanism taking place at studied operating conditions, kinetic models based on Langmuir-Hinshelwood-Hougen-Watson (LHHW) and Mars-van Krevelen (MvK) formalisms are developed following the pseudo-equilibrium state approach.  Physicochemical and statistical criteria are employed to evaluate LHHW and MvK formalisms to elucidate the macroscopic mechanism involved in the ODH-C2 over a NiSnO.
+</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-15-3">&nbsp;<div class="abstract" title="Spatial Distribution Patterns of Submerged Aquatic Vegetation in The Biosphere “Los Petenes” in Campeche, Mexico detected by Remote Sensing"><h1 class="abstract-title">Spatial Distribution Patterns of Submerged Aquatic Vegetation in The Biosphere “Los Petenes” in Campeche, Mexico detected by Remote Sensing</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Iliana Pérez Espinosa</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Lab. Manejo de Recursos Naturales y Lab. Pastos Marinos</div>
+<div class="abstract-content"><p>During the last twenty years, Sumerged Acuatic Vegetation (SAV) has been globally recognized for the provision of diverse environmental services. Of special relevance are carbon storage and sequestration capabilities through roots and soils, estimated to be up to two to four times higher than terrestrial forests. This carbon is denominated as “blue carbon”. Currently most countries can´t report accurately on blue carbon due to lack of detailed information. Until now, the distribution of SAV in the  biosphere reserve “Los Petenes”, Campeche was largely unknown. In that context, baseline information on national seagrass distribution and extension is essential to provide solid information for conservation strategies in Mexico. </p>
+<p>Our project applies remote sensing techniques to delineate major SAV extensions for the generation of baseline cartography. We used hidroacoustic echosounder and satellite images of Sentinel-2A to derive a distribution map of  SAV applying a supervised maximum likelihood classification. Additionally, we used video-transects and in situ verification data to generate five classes of SAV in the biosphere reserve of Los Petenes in Campeche, dominated principally by Thalassia testudinum (Tt). The results show continuous distribution patterns of SAV extending south-north, parallel to the shore. The occupied area is 1,514 km2 corresponding to 83% of the marine zone. The Kappa coefficient during accuracy assessment resulted in 71%. The best differentiation between classes was observed for Thalassia testudinum (Tt) and Syringodium filiforme (Sf), while major confusion between classes of MxPA (4) and MxPP (5) was noted. A principal component analysis of the collected environmental data demonstrated that water depth was the determining variable for the presence of Tt and Sf, while Halodule wrightii presence was mainly related to salinity and pH. Our results show that combined remote sensing techniques together with biochemical/physical data offer great potential for mapping seagrass distribution in shallow waters in México.</p>
+<p>
+</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-16-0">&nbsp;<div class="abstract" title="Determination of Photocatalysts Optical Properties: A Methodology"><h1 class="abstract-title">Determination of Photocatalysts Optical Properties: A Methodology</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Luis Ramos Huerta</div>
+<div class="abstract-content"><p>Photocatalysis has been studied for many years now, however, the correct study of light interaction with the catalyst and the reactor has been neglected. Light is the key ingredient for photocatalytic processes which, nowadays, are more attractive than ever as they could help us tackle important and urgent issues, from textile industry effluent treatment to hydrogen and biodiesel production.In this matter, there exists an equation, the radiative transfer equation (RTE), which describes the change of light intensity with distance and renders a reliable way of studying light-system interactions, as long as catalysts’ optical properties are determined based on real observations. Still, most researchers take into account considerations or pre-determined optical properties, which in turn, avoids scale-up and design applications.</p>
+<p>In this work, a step-by-step methodology where experimental observations and modelling are brought together in order to determine optical properties of titanium dioxide, is presented. A series of Monte Carlo – Levenberg Marquardt optimizations are implemented to choose the best set of optical properties that describe the experimental observations, obtaining a 74% adjustment. Future work is proposed with the intention of providing a path for a better evaluation and understanding that in turn results in a bullet-proof methodology for optical properties determination.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-16-1">&nbsp;<div class="abstract" title="The Best Strategy to Kick a Penalty"><h1 class="abstract-title">The Best Strategy to Kick a Penalty</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Víctor Manuel Martínez Cortés</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Departamento de Matemáticas</div>
+<div class="abstract-content"><p>Game Theory is a branch of the mathematics, which tried to catch the essence of the interaction of the players by proposing some mathematical models. That for us will be the interaction between the kicker and the goalkeeper. We will use a bi-personal (2 players) game.</p>
+<p>On this short-talk we are going to discover one use of the Game Theory in order to exhibit which alternatives the kicker can decide with the purpose to maximize his opportunities to score a goal and at the same time we are going to show goalkeeper best actions in order to saved the shoot.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-16-3">&nbsp;<div class="abstract" title="Dual-beam laser trap for optical stretching of bi-concave human red blood cells  "><h1 class="abstract-title">Dual-beam laser trap for optical stretching of bi-concave human red blood cells  </h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Nahum Méndez Alba</div>
+<div class="abstract-content"><p>An optical trapping system using two laser beams is used simultaneously to trap and stretch the cell membrane of human erythrocytes in an efficient and very simple way. We study the changes in the deformability of red blood cell membrane in type 2 diabetes mellitus patients. We trapped directly with the two laser beams an individual red cell and we stretch it separating the position of the optical traps. The results are obtained by comparing the red cell stretch 2DM group vs a control group   We found a reduced average elastic capacity for the group of imparied cell with diabetes, which can be related to possible complications that this disease generates. </p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-18-0">&nbsp;<div class="abstract" title="History of Computers"><h1 class="abstract-title">History of Computers</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Luis Manuel Arrieta Ávila</div>
+<div class="abstract-content"><p>We are surrounded by computers and electronic devices, but people often ignore the nature of origin of what they have and why things are. This talk aims to give a little insight in the history of computing: from abacus to quantum computing</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-18-1">&nbsp;<div class="abstract" title="Magnetic stimulation effects on spinal cord injury model"><h1 class="abstract-title">Magnetic stimulation effects on spinal cord injury model</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Miguel Flores Leal</div>
+<div class="abstract-content"><p>Magnetic Stimulation (MS) has shown promising results in treating central nervous system disorders, including spinal cord injuries. Nevertheless, most of the mechanism underlaying the technique's observable effects in animal models remain unknown.  In this work we evaluate the effects of repetitive MS in a spinal cord injury model using Magnetic Resonance Imaging (MRI). </p>
+<p>Twelve adult female rats underwent a complete spinal cord transection at T9 vertebrae. Animals were divided in a control group and two stimulation groups (high and low frequency stimulation). Treatment groups received daily repetitive MS during eight weeks. Motor function recovery was assessed in all subjects on a weekly basis. In addition, each subject went through five MRI acquisitions during the experimental period.</p>
+<p>Treatment groups showed a statistically significant improve of motor function recovery score during and after treatment when compared to the control group. Acquired images revealed decreased final injury volume and constrained secondary injury effects in treatment groups.  </p>
+<p>The present findings contribute to the understanding of the neuroprotective potential of MS, offering an interesting in vivo approach of spinal cord injury process and treatment effect. </p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-18-3">&nbsp;<div class="abstract" title="Fundamental study of the Oxidative Dehydrogenation of ethane over a NiO in a packed bed reactor with low tube to particle diameter ratio: Evaluation of kinetics and hydrodynamics in heat transfer"><h1 class="abstract-title">Fundamental study of the Oxidative Dehydrogenation of ethane over a NiO in a packed bed reactor with low tube to particle diameter ratio: Evaluation of kinetics and hydrodynamics in heat transfer</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Alejandro Romero Limones</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Laboratorio de Ingeniería de Reactores Aplicados a Sistemas Químicos y Biológicos</div>
+<div class="abstract-content"><p>Ethylene is the chemical compound most produce in the chemical industry, its production is mainly by highly endothermic processes: Thermal Cracking, Fluid Catalytic Cracking and Catalytic Dehydrogenation. These processes are highly endothermic, this means that a high economic demand is required to provide the necessary energy for the proper functioning of these, coupled with the fact that greenhouse emissions, like COx, are not controlled at all. An alternative reaction proposed to produce ethylene is the Oxidative Dehydrogenation of Ethane (ODH-Et). Nevertheless, to the best of our knowledge, to this day there are not a pilot plant or industrial scale process for this reaction, this due to the engineering challenges that exist both at the catalyst level and the reactor level. In terms of the catalyst, a highly selective to ethylene and active material is needed. Ni-based catalysts are promising materials to be implemented industrially. However, this has not been possible due to the lack of understanding about the catalytic and, essentially, kinetic role of Ni on the catalyst surface for the ODH-Et, this is, there is uncertainty about the type of oxygen that reacts on the catalytic surface, it is not clear if ethane reacts from the gas phase or as an adsorbed species on the catalyst, species that promote the formation of COx have not been identified, among other uncertainties. </p>
+<p>A proposal that has been found in the literature for a greater understanding of the kinetics in the surface of the catalyst, for other reactions, is the development of a kinetic model at the elementary level or a microkinetic model. That means a model that considers reaction steps at elementary level and a catalyst that essentially considers the metal that participates as the active site during the reaction, so that this type of model does not have the only objective of describing experimental data of the reaction, but have a greater understanding and information about the reaction steps, as it can be the enthalpy of the reaction considering intermediaries, the identification of the rate-determining step and the most abundant species on the catalytic surface. With this information, it can have a more rational design of the industrial reactor and new catalysts. At the reactor level, the literature suggests a packed bed reactor with a low tube to particle diameter ratio that operates in a non-isothermal and non-adiabatic way as a promising technology to carry out the ODH-Et, but, nowadays there is not a trustworthy developed model for the design of this kind of reactor. Particularly, for this kind of reactors, it has not achieved to develop a model that describes adequately the heat transfer with and without reaction, this due to the complex interaction of these mechanisms. </p>
+<p>Some issues that it has been found in the literature are the neglecting of hydrodynamics mechanisms within the packed bed with low tube to particle diameter ratio, use of correlations from literature to calculate effective parameters, the high cross-correlation between estimated parameters, lack on the experimental temperature measurements, description of the transience, among other issues. The objective of this work is to develop a multi-scale model of a packed bed reactor with a low tube to particle diameter ratio and a cooled wall where the ODH-Et is carried out using a NiO catalyst. First, an intrinsic kinetic study at the elementary level of the ODH-Et in NiO will be realized to characterize and understand the kinetic role of the Ni in the reaction. Then, a hydrodynamic and heat transfer, without reaction, study will be carried out to characterize and understand these mechanisms. New approaches to characterize heat transfer in absence of reaction are proposed. Kinetic and heat transfer studies will be realized in a range of operational conditions significant to the industry. </p>
+<p>Finally, once kinetics and heat transfer have been characterized, this information will be integrated into an industrial packed bed reactor model. Also, a parametric sensitivity study will be done to understand the multi-scale behavior of the ODH-Et using NiO. Particularly, this study will allow the understanding of the behavior of the ODH-Et at the NiO catalyst level and its interaction with the hydrodynamics, heat, and mass transfer mechanisms at the reactor level. The results of this research will allow in the future the conceptual design of an industrial reactor for the ODH-Et to produce ethylene.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-19-0">&nbsp;<div class="abstract" title="Brownian Stirling engine"><h1 class="abstract-title">Brownian Stirling engine</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Ana Elisa Zamudio  Murillo</div>
+<div class="abstract-content"><p>In recent years there has been some interest in the construction of heat engines at the micro-nano level. Due to the size of the particle, the fluctuations play a very important role and their influence is calculated by the usual methods for Brownian motion. The engine performance is achieved through the manipulation of particles with optical tweezers performing a kind of thermal cycle like Stirling or Carnot’s in classical thermodynamics. The engine modeling is based on a harmonic potential provided by the optical device in which the strength is represented by a time dependent restitutive function according to a given protocol. Besides the thermal bath is simulated with a noise source which has a time dependent intensity given with an external prescription. Then, the particle driven in this device performs the cycle. In this work it is presented a protocol to perform a Stirling cycle and all its properties like the averages of the work done, the heat transfer, the entropy and the efficiency that are calculated following the steps of stochastic energetics at the overdamped regime. </p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-19-1">&nbsp;<div class="abstract" title="Permeation of H2 in a Pd-Ag membrane from a binary mixture H2 / CO2"><h1 class="abstract-title">Permeation of H2 in a Pd-Ag membrane from a binary mixture H2 / CO2</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Mara Ximena Cordero García</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>catalisis laboratory and advanced materials</div>
+<div class="abstract-content"><p>A high selectivity during the separation of H2 from different process effluents could be reached using metallic membranes such as Pd-Ag. It allows potential applications of H2 in the field of new fuels; also, it creates the possibility of establishing profitable processes to produce H2 of high purity from natural gas and renewable liquids. The use of membranes for H2 separations has been developed since the last decade like an interesting and less cost alternative compared to the methods currently used at industrial level: absorption by oscillation of pressure (PSA) or cryogenic distillation. In this work the permeation of H2 in Pd-Ag metal membrane has been studied experimentally from mixtures of H2 and CO2 at ratios equal to or lower than that of the products of the water gas shift reaction (WGS: CO+ H2O(v) ⇄ CO2 + H2). The results indicate that H2 permeation depends mainly on the initial flow ratio between H2 and CO2 (IFRH2/CO2), and on the pressure of the system and the operating temperature of the membrane as well. These variables show the relation between the pressure and the temperature on the amount of H2 permeated in the membrane. The permeability and the difference in partial pressures obtained at IFRH2/CO2 = 1.5 and 200 °C were Ƥ = 1.77x10-7 mol/mPa0.5s and 110 Pa0.5, respectively; the maximum permeate flux was 0.00591 mol/m2s at the same conditions. These results provide much lower CO2 concentrations on the permeate side, which agrees with values reported in the literature. On the other hand, when the WGS reactor was coupled with the Pd-Ag membrane, 70% of the effluent H2 was obtained as pure H2 in the membrane side.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-19-3">&nbsp;<div class="abstract" title="Hydrodeoxygenation of guaiacol over rhodium supported on HY "><h1 class="abstract-title">Hydrodeoxygenation of guaiacol over rhodium supported on HY </h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Andrés Augusto Granados Focil</div>
+<div class="abstract-content"><p>In this work, we have evaluated the HDO of phenol, anisole and guaiacol as model compounds for lignin-based biomass. Our experiments confirmed a certain degree of conversion occurs, even at low temperature, and reaching a maximum of deoxygenation at 250 C. For all the HDO tests, we explore the effects on HDO of these oxygenated molecules varying the feed composition, mass reactive flow rate and temperature reaction on activity, product yield and catalyst stability at high pressure over acidic zeolite HY doped by rhodium. Our study indicates, in all range temperature, that a nearby interaction between rhodium metal site and acid sites enhanced a complete removal of oxygen for guaiacol, phenol and anisole by a full hydrogenation-dehydration mechanism. As well, these catalysts were regenerable and showed an unexpected improve of activity with no significant differences in selectivity forward complete deoxygenated compounds. Finally, a slightly increase in rhodium metal concentration lead to a longer lifetime operation even at higher mass flow feed of oxygenated. </p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-20-0">&nbsp;<div class="abstract" title="The space charge effect on the grain boundary conduction of GdBaCo2O5+δ "><h1 class="abstract-title">The space charge effect on the grain boundary conduction of GdBaCo2O5+δ </h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>César I. Ramos Villegas</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Post-graduate student (CBI)</div>
+<div class="abstract-content"><p>Among the cathodic materials for Intermediate Temperature Solid Oxide Fuel Cells, GdBaCo2O5+δ has been recently proposed as a promising candidate based on its high mixed ionic-electronic conductivity values and compatibility with ceria based electrolytes. Generally, grain boundaries of ceramic conductors offer a blocking effect to oxygen ion conduction, either because of secondary phases or the space charge effect, while electronic conduction is enhanced. Regarding the space charge effect, a depletion of the oxygen vacancies concentration in the vicinity of the grain boundary cores, which have an excess of positive charges, causes that the grain boundaries behave as a barrier to ionic transport. In this contribution, the grain boundary resistivities of GdBaCo2O5+δ samples were characterized as a function of grain size. Impedance spectroscopic measurements were performed for the electrical characterization of the samples in the temperature range of 100 to 700 °C under air. The grain boundary characteristics will be discussed in the context of the space charge effect. </p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-20-1">&nbsp;<div class="abstract" title="Thermodynamics of a higher dimensional noncommutative anti-de Sitter-Einstein-Born-Infeld black hole"><h1 class="abstract-title">Thermodynamics of a higher dimensional noncommutative anti-de Sitter-Einstein-Born-Infeld black hole</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Blanca Angélica González Morales</div>
+<div class="abstract-affiliation"><span>Affiliation: </span>Departamento de Física. Gravitación y Cosmología</div>
+<div class="abstract-content"><p>We analyze noncommutative deformations of a higher dimensional anti-de Sitter-Einstein-BornInfeld black hole. Two models based on noncommutative inspired distributions of mass and charge are discussed and their thermodynamical properties such as the equation of state are explicitly calculated. In the (3+1)-dimensional case the Gibbs energy function of each model is used to discuss the presence of phase transitions.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div> 
+<div class="abstract-box hidden" id="event-20-3">&nbsp;<div class="abstract" title="Scalar Field and the Dark Side of the Universe"><h1 class="abstract-title">Scalar Field and the Dark Side of the Universe</h1>
+<div class="abstract-container"><div class="abstract-speaker"><span>Speaker: </span>Belén Carvente Mendoza</div>
+<div class="abstract-content"><p>In cosmology the most accepted model to explain the evolution of the Universe is known as the Lambda - CDM. In this model, 4 percent of the total content of the Universe is "usual" matter, 22 percent is Dark Matter and the rest is Dark Energy. However, this model has certain conflicts and it seems necessary to change the paradigm. </p>
+<p>In the last years an alternative scenario that has received much attention is the Scalar Field as Dark Matter and as Dark Energy.</p>
+<p>Scalar fields have been widely used in cosmology during the last three decades, but it is until now that we have been able to fully understand their role as possible major matter components for the evolution of the Universe.</p></div><div class="abstract-return"><a href="#program">Return to conference program</a></div>
+</div></div></div></body></html> <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+ <script>
+  $(function(){
+
+    var program = $("#program");
+    var lastAbstract = null;
+    var header = $("#header");
+
+    $("table thead .hidden").removeClass("hidden");
+
+    $(".cell-event a").click(function(event){
+       event.preventDefault();       
+
+       var boxId = $(this).attr("href");       
+
+       header.fadeOut();
+       program.fadeOut("fast", function(){
+          lastAbstract = $(boxId);
+          lastAbstract.fadeIn();       
+       });       
+
+       return false;
+    });
+
+    $(".abstract-return a").click(function(event){
+        event.preventDefault();
+
+        lastAbstract.fadeOut("fast",function(){
+            header.fadeIn();
+            program.fadeIn();            
+        });
+
+
+        return false;
+    });
+
+    var showTitlesButton = $("#show-titles-button");    
+    var titles = $(".cell-plenary .cell-title, .cell-short-talk .cell-title");
+    showTitlesButton.click(function(event){      
+      if(showTitlesButton.prop("checked")===true){        
+        titles.show();
+      } else {        
+        titles.hide();
+      }
+    });    
+
+   });
+ </script> 

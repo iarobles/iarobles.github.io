@@ -1,0 +1,10 @@
+# Project template
+#- layout: top-middle
+- layout: left
+  name: YAGS
+  link: http://xamanek.izt.uam.mx/yags
+  github: /yags/yags
+  quote: >
+    Colaborador del proyecto "Yet Another Graph System".
+#  description: | # this will include new lines to allow paragraphs
+#    Colaborador del proyecto de código abierto.

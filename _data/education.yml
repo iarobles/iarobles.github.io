@@ -1,0 +1,31 @@
+# Education Template
+- layout: left
+  name: UPIITA-IPN
+  dates: 2009
+  qualification: Ingeniero en Telemática
+  quote: >
+     Unidad Profesional Interdisciplinaria en Ingeniería y Tecnologías Avanzadas. Instituo Politécnico Nacional
+#  description: | # this will include new lines to allow paragraphs
+#    Description of qualification
+
+
+- layout: left
+  name: UAM-I
+  dates: 2016
+  qualification: Maestría en Ciencias (Matemáticas)
+  quote: >
+     Universidad Autónoma Metropolitana. Unidad Iztapalapa.
+#  description: | # this will include new lines to allow paragraphs
+#    Description of qualification
+
+
+
+
+- layout: left
+  name: UAM-I
+  dates: Aún en curso.
+  qualification: Doctorado en Ciencias (Matemáticas)
+  quote: >
+     Universidad Autónoma Metropolitana. Unidad Iztapalapa.
+#  description: | # this will include new lines to allow paragraphs
+#    Description of qualification

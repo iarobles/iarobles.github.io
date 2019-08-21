@@ -1,0 +1,23 @@
+# Experience template
+- layout: left
+#  company: Desarrollador de software.
+#  link: Link to company (optional)
+  job_title: Desarrollador de software.
+  dates: 2008 al 2013.
+#  quote: >
+#   Desarrollador de aplicaciones web y móviles para la industria privada. 
+  description: | # this will include new lines to allow paragraphs
+       Desarrollador de aplicaciones web y móviles para la industria privada. 
+
+
+# Experience template
+- layout: left
+#  company: Desarrollador de software.
+#  link: Link to company (optional)
+  job_title: Instructor.
+  dates: 2013 al 2015.
+#  quote: >
+#   Desarrollador de aplicaciones web y móviles para la industria privada. 
+  description: | # this will include new lines to allow paragraphs
+       Instructor de cursos de Spring Framework, Node.js, HTML5 en la industria privada,  
+       CIC-IPN y UPIITA-IPN.

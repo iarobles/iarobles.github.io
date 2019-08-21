@@ -1,0 +1,79 @@
+# Site
+repository: Git repository where your resume will be hosted, only required if you are hosting on GitHub (eg. sproogen/modern-resume-theme)
+# favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
+
+# Personal info
+name: I.A Robles
+title: Matemático por diversión
+email: iarobles272@gmail.com
+#phone: Your phone number (optional)
+website: iarobles.github.io
+
+# Social links
+twitter_username: IARoblitos
+github_username:  iarobles
+#dribbble_username: jekyll
+#facebook_username: jekyll
+#flickr_username: jekyll
+#instagram_username: jekyll
+#linkedin_username: jekyll
+#xing_username: jekyll
+#pinterest_username: jekyll
+#youtube_username: jekyll
+#googleplus_username: +jekyll
+
+# About Section
+about_title: ¿De quién es esta página?
+about_profile_image: images/profile-picture2.png
+about_content: | # this will include new lines to allow paragraphs
+  Estas visitando la página de **_Ismael Robles_**, matemático y desarrollador de software. 
+  
+  Esta página tiene la siguiente finalidad (o al menos, intentarlo):
+    - Ser un breve Curriculum Vitae.
+    - Ser un repositorio de publicaciones y archivos de software de mi interés.
+    - Mostrar algunos proyectos de software personales. 
+    - Ser un blog.
+
+
+# Projects Section
+projects_title: Proyectos #(Use this to override about projects section title)
+
+# Experience Section
+experience_title: Experiencia #(Use this to override about experience section title)
+
+# Education Section
+education_title: Educación #(Use this to override about education section title)
+
+# More Section
+more_title: Áreas de interés #(Use this to override about more section title)
+more_content: | # this will include new lines to allow paragraphs
+  - Teoría de las gráficas (en particular, teoría de clanes).
+  - Teoría de la computación (en particular, teoría de la complejidad computacional).
+  - Desarrollo de software.
+  - Redes de computadoras.
+# Footer
+footer_show_references: true
+
+# Build settings
+# theme: modern-resume-theme (Use this is you are hosting your resume yourself)
+# remote_theme: sproogen/modern-resume-theme (Use this if you are hosting your resume on GitHub)
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+ - jekyll-seo-tag
+
+exclude : [
+  "Gemfile",
+  "Gemfile.lock",
+  "node_modules",
+  "vendor/bundle/",
+  "vendor/cache/",
+  "vendor/gems/",
+  "vendor/ruby/",
+  "lib/",
+  "scripts/",
+  "docker-compose.yml",
+  ]
