@@ -5,7 +5,7 @@ repository: Git repository where your resume will be hosted, only required if yo
 # Personal info
 name: I.A Robles
 title: Matemático por diversión
-email: iarobles272@gmail.com
+email: iarobles271@gmail.com
 #phone: Your phone number (optional)
 website: iarobles.github.io
 
@@ -43,6 +43,9 @@ experience_title: Experiencia #(Use this to override about experience section ti
 
 # Education Section
 education_title: Educación #(Use this to override about education section title)
+
+# Publications Section
+publications_title: Publicaciones #(Use this to override about publications section title)
 
 # More Section
 more_title: Áreas de interés #(Use this to override about more section title)
