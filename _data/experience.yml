@@ -14,10 +14,22 @@
 - layout: left
 #  company: Desarrollador de software.
 #  link: Link to company (optional)
-  job_title: Instructor.
+  job_title: Instructor de Software.
   dates: 2013 al 2015.
 #  quote: >
 #   Desarrollador de aplicaciones web y móviles para la industria privada. 
   description: | # this will include new lines to allow paragraphs
        Instructor de cursos de Spring Framework, Node.js, HTML5 en la industria privada,  
        CIC-IPN y UPIITA-IPN.
+
+
+# Experience template
+- layout: left
+#  company: Desarrollador de software.
+#  link: Link to company (optional)
+  job_title: Profesor de asignatura.
+  dates: 2019.
+#  quote: >
+#   Desarrollador de aplicaciones web y móviles para la industria privada. 
+  description: | # this will include new lines to allow paragraphs
+       Profesor de asignatura en la UACM.
