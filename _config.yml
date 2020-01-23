@@ -47,6 +47,9 @@ education_title: Educación #(Use this to override about education section title
 # Publications Section
 publications_title: Publicaciones #(Use this to override about publications section title)
 
+#Conferences Section
+conferences_title: Conferencias #(Use this to override about conferences section title)
+
 # More Section
 more_title: Áreas de interés #(Use this to override about more section title)
 more_content: | # this will include new lines to allow paragraphs

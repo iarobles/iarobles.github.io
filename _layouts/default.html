@@ -28,6 +28,10 @@
         {%- include publications.html -%}
       {%- endif -%}
 
+      {%- if site.data.conferences.size > 0 -%}
+        {%- include conferences.html -%}
+      {%- endif -%}
+
       {%- if site.data.projects.size > 0 -%}
         {%- include projects.html -%}
       {%- endif -%}      

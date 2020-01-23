@@ -2,12 +2,12 @@
 - layout: left
 #  company: Desarrollador de software.
 #  link: Link to company (optional)
-  job_title: Desarrollador de software.
+  job_title: Consultor Senior/Desarrollador de Software.
   dates: 2008 al 2013.
 #  quote: >
 #   Desarrollador de aplicaciones web y móviles para la industria privada. 
   description: | # this will include new lines to allow paragraphs
-       Desarrollador de aplicaciones web y móviles para la industria privada. 
+       Consultor senior de desarrollo de aplicaciones web y móviles en la industria privada (AXA Seguros, Unilever, TV Azteca, Ferromex, etc.). 
 
 
 # Experience template
@@ -19,7 +19,7 @@
 #  quote: >
 #   Desarrollador de aplicaciones web y móviles para la industria privada. 
   description: | # this will include new lines to allow paragraphs
-       Instructor de cursos de Spring Framework, Node.js, HTML5 en la industria privada,  
+       Instructor de cursos especializados en Spring Framework, Node.js y HTML5 en la industria privada,  
        CIC-IPN y UPIITA-IPN.
 
 
@@ -32,4 +32,4 @@
 #  quote: >
 #   Desarrollador de aplicaciones web y móviles para la industria privada. 
   description: | # this will include new lines to allow paragraphs
-       Profesor de asignatura en la UACM.
+       Profesor de asignatura en la UACM de los cursos de Teoría de la Computación, Mapeo Objeto-Relacional y XML 1.

@@ -1,0 +1,6 @@
+<div class="container education-container">
+  <h3>{{ site.conferences_title | default: "Conferences" }}</h3>
+  {% for conference in site.data.conferences %}
+    {% include {{ conferences.layout | default: 'left' | append: ".html" }} item=conference %}
+  {% endfor %}
+</div>

@@ -1,0 +1,36 @@
+# Conferences Template
+- layout: left
+  pub_title: On the parameterized complexity of finding all cliques of a graph
+  dates: Noviembre 11, 2016.
+  description: VII Latin American Workshop on Cliques in Graphs (LAWCG 2016). Mar de La Plata, Argentina.             
+
+
+- layout: left
+  pub_title: YAGS, nuevo sotware gratuito para teoría de gráficas.
+  dates: Marzo 7, 2017.
+  description: XXXII Coloquio Víctor Neumann-Lara de Teoría de las Gráficas, Combinatoria y sus Aplicaciones. San Luis Potosí, México.
+
+
+- layout: left
+  pub_title: On cliques and bicliques.
+  dates: Septiembre 14, 2017.
+  description: IX Latin and American Algorithms, Graphs and Optimization Symposium (LAGOS 2017). CIRM Marsella, Francia.
+
+
+- layout: left
+  pub_title: Sobre clanes y biclanes.
+  dates: Marzo 4, 2018.
+  description: XXXIII Coloquio Víctor Neumann-Lara de Teoría de las Gráficas, Combinatoria y sus Aplicaciones. Habana, Cuba.
+
+
+- layout: left
+  pub_title: On bicliques and the second clique graph of suspension.
+  dates: Agosto 11, 2018.
+  description: VIII Latin American Workshop on Cliques in Graphs (LAWCG 2018). Río de Janeiro, Brasil.             
+
+
+- layout: left
+  pub_title: Uso de algoritmos genéticos para búsqueda de gráficas iteradas de clanes con crecimiento exponencial.
+  dates: Julio 1, 2019.
+  description: Seminario de investigación SIC² de la UAM Lerma. Lerma, México.
+  
