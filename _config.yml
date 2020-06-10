@@ -4,7 +4,7 @@ repository: Git repository where your resume will be hosted, only required if yo
 
 # Personal info
 name: I.A Robles
-title: Matemático por diversión
+title: Matemático e Ingeniero
 email: iarobles271@gmail.com
 #phone: Your phone number (optional)
 website: iarobles.github.io
@@ -24,14 +24,14 @@ github_username:  iarobles
 
 # About Section
 about_title: ¿De quién es esta página?
-about_profile_image: images/profile-picture2.png
+about_profile_image: images/perfil3.jpg
 about_content: | # this will include new lines to allow paragraphs
-  Estas visitando la página de **_Ismael Robles_**, matemático y desarrollador de software. 
-  
+  Estas visitando la página de **_Ismael Robles_**, matemático y desarrollador de software.
+
   Esta página tiene la siguiente finalidad (o al menos, intentarlo):
     - Ser un breve Curriculum Vitae.
     - Ser un repositorio de publicaciones y archivos de software de mi interés.
-    - Mostrar algunos proyectos de software personales. 
+    - Mostrar algunos proyectos de software personales.
     - Ser un blog.
 
 

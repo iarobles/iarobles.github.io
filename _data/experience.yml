@@ -5,9 +5,9 @@
   job_title: Consultor Senior/Desarrollador de Software.
   dates: 2008 al 2013.
 #  quote: >
-#   Desarrollador de aplicaciones web y móviles para la industria privada. 
+#   Desarrollador de aplicaciones web y móviles para la industria privada.
   description: | # this will include new lines to allow paragraphs
-       Consultor senior de desarrollo de aplicaciones web y móviles en la industria privada (AXA Seguros, Unilever, TV Azteca, Ferromex, etc.). 
+       Consultor senior de desarrollo de aplicaciones web y móviles en la industria privada (AXA Seguros, Unilever, TV Azteca, Ferromex, etc.).
 
 
 # Experience template
@@ -17,9 +17,9 @@
   job_title: Instructor de Software.
   dates: 2013 al 2015.
 #  quote: >
-#   Desarrollador de aplicaciones web y móviles para la industria privada. 
+#   Desarrollador de aplicaciones web y móviles para la industria privada.
   description: | # this will include new lines to allow paragraphs
-       Instructor de cursos especializados en Spring Framework, Node.js y HTML5 en la industria privada,  
+       Instructor de cursos especializados en Spring Framework, Node.js y HTML5 en la industria privada,
        CIC-IPN y UPIITA-IPN.
 
 
@@ -28,8 +28,8 @@
 #  company: Desarrollador de software.
 #  link: Link to company (optional)
   job_title: Profesor de asignatura.
-  dates: 2019.
+  dates: 2019 al 2020.
 #  quote: >
-#   Desarrollador de aplicaciones web y móviles para la industria privada. 
+#   Desarrollador de aplicaciones web y móviles para la industria privada.
   description: | # this will include new lines to allow paragraphs
        Profesor de asignatura en la UACM de los cursos de Teoría de la Computación, Mapeo Objeto-Relacional y XML 1.

@@ -2,7 +2,7 @@
 - layout: left
   pub_title: On the parameterized complexity of finding all cliques of a graph
   dates: Noviembre 11, 2016.
-  description: VII Latin American Workshop on Cliques in Graphs (LAWCG 2016). Mar de La Plata, Argentina.             
+  description: VII Latin American Workshop on Cliques in Graphs (LAWCG 2016). Mar de La Plata, Argentina.
 
 
 - layout: left
@@ -26,11 +26,16 @@
 - layout: left
   pub_title: On bicliques and the second clique graph of suspensions.
   dates: Agosto 11, 2018.
-  description: VIII Latin American Workshop on Cliques in Graphs (LAWCG 2018). Río de Janeiro, Brasil.             
+  description: VIII Latin American Workshop on Cliques in Graphs (LAWCG 2018). Río de Janeiro, Brasil.
 
 
 - layout: left
   pub_title: Uso de algoritmos genéticos para búsqueda de gráficas iteradas de clanes con crecimiento exponencial.
   dates: Julio 1, 2019.
   description: Seminario de investigación SIC² de la UAM Lerma. Lerma, México.
-  
+
+
+- layout: left
+  pub_title: Gráficas iteradas de clanes con crecimiento exponencial.
+  dates: Marzo 4, 2020.
+  description: XXXV Coloquio Víctor Neumann-Lara de Teoría de las Gráficas, Combinatoria y sus Aplicaciones. Queretaro, México.
